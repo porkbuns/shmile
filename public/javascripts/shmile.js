@@ -1,7 +1,13 @@
 var Shmile = {
   PHOTO_MARGIN: 50, // Margin for the composite photo per side
   WINDOW_WIDTH: $(window).width(),
-  WINDOW_HEIGHT: $(window).height() - 10
+  WINDOW_HEIGHT: $(window).height() - 10,
+  OVERLAY_DELAY: 2000,
+  NEXT_DELAY: 10000,
+  CHEESE_DELAY: 1000,
+  FLASH_DURATION: 1500,
+  READY_DELAY: 2000,
+  NICE_DELAY: 5000
 }
 
 // Current app state 
@@ -125,12 +131,12 @@ var fsm = StateMachine.create({
     onenterreview_composited: function(e, f, t) {
       socket.emit('composite');
       p.showOverlay(true);
-      setTimeout(function() { fsm.next_set() }, 5000);
+      setTimeout(function() { fsm.next_set() }, Shmile.NEXT_DELAY);
     },
     onleavereview_composited: function(e, f, t) {
       // Clean up
       p.animate('out');
-      p.modalMessage('Nice!', 3000, 200, function() {p.slideInNext()});
+      p.modalMessage('Nice!', Shmile.NICE_DELAY, 200, function() {p.slideInNext()});
     },
     onchangestate: function(e, f, t) {
       console.log('fsm received event '+e+', changing state from ' + f + ' to ' + t)

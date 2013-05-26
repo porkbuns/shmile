@@ -298,7 +298,7 @@ PhotoView.prototype.showOverlay = function(animate) {
     this.overlayImage.show();
     if (animate) {
         //this.overlayImage.attr({'opacity':0});
-        this.overlayImage.animate({'opacity':1}, 2000);
+        this.overlayImage.animate({'opacity':1}, Shmile.OVERLAY_DELAY);
     }
 }
 /**
@@ -307,7 +307,7 @@ PhotoView.prototype.showOverlay = function(animate) {
 PhotoView.prototype.hideOverlay = function(animate) {
     var view = this;
     if (animate) {
-        this.overlayImage.animate({'opacity':0}, 2000, function() {
+        this.overlayImage.animate({'opacity':0}, Shmile.OVERLAY_DELAY, function() {
             view.overlayImage.hide();
         });
     } else {

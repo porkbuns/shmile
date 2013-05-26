@@ -10,11 +10,11 @@ function CameraUtils() {};
  */
 CameraUtils.snap = function(idx) {
     p.zoomFrame(idx, 'in');
-    p.modalMessage('Ready?', 2000);
+    p.modalMessage('Ready?', Shmile.READY_DELAY);
     setTimeout(function() {
-        p.modalMessage('Cheese!', 4000);
-        p.flashEffect(4000);
-    }, 5000);
+        p.modalMessage('Cheese!', Shmile.CHEESE_DELAY);
+        p.flashEffect(Shmile.FLASH_DURATION);
+    }, Shmile.READY_DELAY);
     
 }
 

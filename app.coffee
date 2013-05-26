@@ -64,7 +64,7 @@ io.sockets.on "connection", (websocket) ->
     compositer.on "composited", (output_file_path) ->
       console.log "Finished compositing image. Output image is at ", output_file_path
       State.image_src_list = []
-      if true
+      if false
         console.log "Printing image at ", output_file_path
         exec "lpr " + output_file_path
       websocket.broadcast.emit "composited_image", photo_file_utils.photo_path_to_url(output_file_path)
