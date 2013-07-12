@@ -5,8 +5,8 @@ sys = require "sys"
 fs = require "fs"
 yaml = require "yaml"
 photo_file_utils = require("./photo_file_utils")
-camera_control = require("./camera_control")
-image_twiddle = require("./image_twiddler")
+CameraControl = require("./CameraControl")
+ImageTwiddler = require("./ImageTwiddler")
 
 exp = express()
 web = http.createServer(exp)
@@ -39,7 +39,7 @@ io = require("socket.io").listen(web)
 web.listen 3000
 io.sockets.on "connection", (websocket) ->
   sys.puts "Web browser connected"
-  camera = camera_control()
+  camera = new CameraControl().init()
   camera.on "camera_begin_snap", ->
     websocket.emit "camera_begin_snap"
 
@@ -59,12 +59,12 @@ io.sockets.on "connection", (websocket) ->
   websocket.on "all_images", ->
 
   websocket.on "composite", ->
-    compositer = image_twiddle(State.image_src_list)
+    compositer = new ImageTwiddler(State.image_src_list).init()
     compositer.emit "composite"
     compositer.on "composited", (output_file_path) ->
       console.log "Finished compositing image. Output image is at ", output_file_path
       State.image_src_list = []
-      if false
+      if true #FIXMEEEEE
         console.log "Printing image at ", output_file_path
         exec "lpr " + output_file_path
       websocket.broadcast.emit "composited_image", photo_file_utils.photo_path_to_url(output_file_path)

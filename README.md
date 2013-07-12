@@ -35,7 +35,7 @@ The server is responsible for controlling the camera, and serving the Web interf
 1. Go to project root.
 2. `npm install` to install the node package dependencies.
 3. Install [`gphoto2`](http://www.gphoto.org/proj/gphoto2/). I'm installing with `brew`. Run `brew install gphoto2`
-3. Run `node app.js` to start the server application.
+3. Run `coffee app.coffee` to start the server application.
 
 #### Control interface
 

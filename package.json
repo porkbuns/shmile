@@ -1,49 +1,54 @@
 {
-   "name": "shmile",
-   "version": "0.1.6",
-   "description": "Photobooth controller for Node.",
-   "keywords": [
-       "nodejs" ,
-       "photos",
-       "photobooth",
-       "photo booth",
-       "camera",
-       "gphoto2",
-       "photography",
-       "party"
-   ],
-   "maintainers": [
-       {
-           "name": "Andrew Hao",
-           "email": "andrewhao@gmail.com",
-           "web": "http://www.g9labs.com"
-       }
-   ],
-   "licenses": [
-       {
-           "type": "GPLv2",
-           "url": "http://www.example.org/licenses/gpl.html"
-       },
-       {
-           "type": "MIT",
-           "url": "http://www.opensource.org/licenses/MIT"
-       }
-   ],
-   "repositories": [
-       {
-           "type": "git",
-           "url": "http://github.com:porkbuns/shmile.git"
-       }
-   ],
-   "dependencies": {
-       "socket.io": ">=0.8.7",
-       "express": ">=2.4.6",
-       "jade": ">=0.15.4",
-       "imagemagick": ">=0.1.2",
-       "yaml": ">=0.2.3"
+ "name": "shmile",
+ "version": "0.1.6",
+ "description": "Photobooth controller for Node.",
+ "keywords": [
+ "nodejs" ,
+ "photos",
+ "photobooth",
+ "photo booth",
+ "camera",
+ "gphoto2",
+ "photography",
+ "party"
+ ],
+ "maintainers": [
+ {
+   "name": "Andrew Hao",
+   "email": "andrewhao@gmail.com",
+   "web": "http://www.g9labs.com"
+ }
+ ],
+ "licenses": [
+   {
+   "type": "GPLv2",
+   "url": "http://www.example.org/licenses/gpl.html"
    },
-   "engines": ["node >=0.8.0"],
-   "directories": {
-       "lib": "lib"
+   {
+     "type": "MIT",
+     "url": "http://www.opensource.org/licenses/MIT"
    }
+   ],
+ "repositories": [
+   {
+     "type": "git",
+     "url": "http://github.com:porkbuns/shmile.git"
+   }
+ ],
+ "dependencies": {
+   "socket.io": ">=0.8.7",
+   "express": ">=2.4.6",
+   "jade": ">=0.15.4",
+   "imagemagick": ">=0.1.2",
+   "yaml": ">=0.2.3",
+   "coffee-script": ">= 1.6.3"
+   },
+ "devDependencies": {
+  "chai": "*",
+  "mocha": "*"
+ },
+ "engines": ["node >=0.8.0"],
+ "directories": {
+   "lib": "lib"
+ }
 }
