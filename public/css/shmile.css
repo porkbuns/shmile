@@ -49,7 +49,7 @@ button#start-button {
 .medium.awesome, .medium.awesome:visited        { font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
 .large.awesome, .large.awesome:visited          { font-size: 5em; padding: 0.25em 0.5em 0.3em; }
 .superlarge.awesome, .superlarge.awesome:visited    {
-    font-size: 10em;
+    font-size: 7em;
     padding: 0.8em;
     color: #775402;
     box-shadow:0 0.3em 1em rgba(0,0,0,0.8);
